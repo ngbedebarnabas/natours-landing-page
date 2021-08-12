@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+/* change the default root font-size */
+
+    font-size: 62.5%; /*equivalent of 10px = { 10/16* 100 } */
+
+    @include responsive(tab-port) {
+        font-size: 50%; //1rem = 8px => 8/16 
+    }
+
+    @include responsive(tab-land){
+        font-size: 56.25%; //9px
+    }
+
+    @include responsive(big-desktop) {
+        font-size: 75%; //12px
+    }
+}
+
+body {
+    padding: 3rem;
+    box-sizing: border-box;
+
+    @include responsive(tab-port) {
+        padding: 0;
+    }
+}

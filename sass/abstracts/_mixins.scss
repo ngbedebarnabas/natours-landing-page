@@ -1,0 +1,36 @@
+@mixin  clearfix {
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+/*
+BREAKPOINT CHOICES
+
+phone - 600px
+tablet portrait - 900px
+tablet landscape - 1200px
+[Desktop]       - any between 
+big desktop - 1800px
+
+*/ 
+@mixin responsive($breakpoint) { 
+
+    @if $breakpoint == big-desktop {
+        @media screen and (min-width: 112.5em) { @content };
+    }
+
+    @if $breakpoint == tab-land {
+        @media screen and (max-width: 75em) { @content };
+    }
+
+    @if $breakpoint == tab-port {
+        @media screen and (max-width: 56.25em) { @content };
+    }
+    
+    @if $breakpoint == phone {
+        @media screen and (max-width: 37.5em) { @content };
+    }
+ }
